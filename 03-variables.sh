@@ -17,3 +17,9 @@ x=10
 y=30
 ADD=$(($x+$y))
 echo Add = $ADD
+
+a=(10 20 30)
+echo ${a[3]}
+
+
+
