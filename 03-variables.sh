@@ -19,7 +19,7 @@ ADD=$(($x+$y))
 echo Add = $ADD
 
 a=(10 20 30)
-echo ${a[3]}
+echo something = ${a[3]}
 
 
 
