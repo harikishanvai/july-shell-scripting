@@ -5,4 +5,4 @@ b=devops
 
 echo $a
 echo $b
-echo $a times
+echo ${a}times
