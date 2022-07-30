@@ -9,3 +9,6 @@ echo ${a}times
 
 DATE=2022-07-2022
 echo Today date is $DATE
+
+DATE=$(date +%F)
+echo Today date is $DATE
