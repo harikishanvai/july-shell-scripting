@@ -1,9 +1,9 @@
 #!/bin/bash
 
-USER_ID=$(id_u)
+USER_ID=$(id -u)
 if [ "$USER_ID" -ne 0 ]; then
   echo You Should run your script as sudo or root user
-  exit
+  exit 1
 fi
 
 echo -e "\e[31m Installing Nginx \e[0m"
@@ -12,7 +12,7 @@ if [ $? -eq 0 ]; then
   echo  -e "\e[31mSUCCESS\e[0m"
 else
   echo -e "\e[32mFAILURE\e[0m"
-  exit 1
+  exit 2
 fi
 
 echo -e "\e[32m Downloding Nginx \e[0m"
