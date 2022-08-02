@@ -18,7 +18,7 @@ fi
 
 # Expressions are important
 # 1. String Tests
-# Operators : ==, !* , -z
+# Operators : ==, != , -z
 # 2. Number Tests
 # 3. File Test
 
@@ -27,7 +27,7 @@ if [ $a == "abc" ]; then
   echo Both are equal
 fi
 
-if [ $a !* "abc" ]; then
+if [ $a != "abc" ]; then
   echo "Both are not equal"
 fi
 
