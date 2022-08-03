@@ -11,11 +11,13 @@
 ## declare a function
 
 Print_Message() {
-  echo Hello
-  echo world
   echo name
+  echo welcome to $1 Training
+  echo "Frist Argument in function = $1"
+
 }
 
-Print_Message
+Print_Message Devops
+echo "Frist Argument in main script = $1"
 
 ## Note , Function has to declare
