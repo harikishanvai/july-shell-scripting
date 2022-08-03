@@ -19,10 +19,16 @@ Print_Message() {
   b=64
 }
 
+STAT() {
+  echo hello
+  return 1
+  echo bye
+}
 a=5464
 Print_Message Devops
 
 echo "Frist Argument in main script = $1"
 echo "value of b = $b"
-
+STAT
+echo Exit ststus of function STAT = $?
 ## Note , Function has to declare
