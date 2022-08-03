@@ -1,7 +1,7 @@
 #!/bin/bash
 
 StatCheck() {
-  if [ $1 -eq 0 ]; then
+  if [ $? -eq 0 ]; then
     echo -e "\e[31mSUCCESS\e[0m"
   else
     echo -e "\e[32mFAILURE\e[0m"
@@ -45,6 +45,6 @@ StatCheck $1
 Print "Starting Nginx"
 systemctl restart nginx >>$LOG_FILE && systemctl enable nginx >>$LOG_FILE
 StatCheck $?
-#
+
 
 
