@@ -42,5 +42,6 @@ StatCheck $1
 Print "Starting Nginx"
 systemctl restart nginx && systemctl enable nginx
 StatCheck $1
+#
 
 
