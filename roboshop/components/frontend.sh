@@ -28,16 +28,19 @@ StatCheck $1
 
 Print "Cleanup Old Nginx Content and Extract New Downloded Archive"
 rm -rf /usr/share/nginx/html/*
+Statcheck $1
 cd /usr/share/nginx/html/
-unzip /tmp/frontend.zip
-mv frontend-main/* .
-mv static/* .
-rm -rf frontend-main README.md
+
+Print "Extracting Archive"
+unzip /tmp/frontend.zip && mv frontend-main/* . && mv static/* .
+Statcheck $1
+
+Print "Update Roboshop Configuration"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 StatCheck $1
 
 Print "Starting Nginx"
-systemctl restart nginx
+systemctl restart nginx && systemctl enable nginx
 StatCheck $1
-systemctl enable nginx
+
 
