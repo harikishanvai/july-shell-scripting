@@ -30,5 +30,5 @@ Print_Message Devops
 echo "Frist Argument in main script = $1"
 echo "value of b = $b"
 STAT
-echo Exit ststus of function STAT = $?
+echo Exit status of function STAT = $?
 ## Note , Function has to declare
