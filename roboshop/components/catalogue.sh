@@ -34,19 +34,7 @@ Print "Install app dependencies"
 cd /home/roboshop/catalogue &>>${LOG_FILE} && npm install &>>${LOG_FILE}
 StatCheck $?
 
-
-
-
-
-# 1. Update SystemD file with correct IP addresses
-
-  #  Update `MONGO_DNSNAME` with MongoDB Server IP
-
-# 2. Now, lets set up the service with systemctl.
-
-# mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
-# systemctl daemon-reload
-# systemctl start catalogue
-# systemctl enable catalogue
-
+Print "Fix app user permission"
+chown -R ${APP_USER}:${APP_USER} /home/${APP_USER}
+StatCheck $?
 
