@@ -18,19 +18,19 @@ if [ $? -ne 0 ]; then
 fi
 
 Print "Download app content"
-curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" &>>${LOG_FILE}
+curl -f -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" &>>${LOG_FILE}
 StatCheck $?
 
 Print "cleanup old content"
-rm -rf /home/roboshop/catalogue &>>${LOG_FILE}
+rm -rf /home/${APP_USER}/catalogue &>>${LOG_FILE}
 StatCheck $?
 
 Print "Extract app content"
-cd /home/roboshop &>>${LOG_FILE} && unzip -o /tmp/catalogue.zip &>>${LOG_FILE} && mv catalogue-main catalogue &>>${LOG_FILE}
+cd /home/${APP_USER} &>>${LOG_FILE} && unzip -o /tmp/catalogue.zip &>>${LOG_FILE} && mv catalogue-main catalogue &>>${LOG_FILE}
 StatCheck $?
 
 Print "Install app dependencies"
-cd /home/roboshop/catalogue &>>${LOG_FILE} && npm install &>>${LOG_FILE}
+cd /home/${APP_USER}/catalogue &>>${LOG_FILE} && npm install &>>${LOG_FILE}
 StatCheck $?
 
 Print "Fix app user permission"
