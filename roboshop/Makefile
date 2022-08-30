@@ -10,3 +10,6 @@ catalogue:
 cart:
 	bash components/cart.sh
 
+redis:
+	bash components/redis.sh
+
